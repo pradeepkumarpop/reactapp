@@ -24,8 +24,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.email mss.pradeepkumar@gmail.com
-          git config --global user.name pradeepkumarpop
+          git config user.email "mss.pradeepkumar@gmail.com"
+          git config user.name "pradeepkumarpop"
           npx gh-pages -d build
         env:
           CI: true
