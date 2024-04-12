@@ -23,7 +23,7 @@ jobs:
         run: npm run predeploy
 
       - name: Deploy to GitHub Pages
-        uses: JamesKeys/gh-pages@v4  # Use an action to deploy
+        uses: omkartapale/react-deployment-gh-pages@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Access token with deploy permissions
           GIT_USER_EMAIL: "mss.pradeepkumar@gmail.com"  # Optional: Set deployer email
