@@ -22,10 +22,10 @@ jobs:
       - name: Build the app
         run: npm run predeploy
 
-      - name: Deploy to GitHub Pages
-        uses: omkartapale/react-deployment-gh-pages@v1.0.0
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Access token with deploy permissions
-          GIT_USER_EMAIL: "mss.pradeepkumar@gmail.com"  # Optional: Set deployer email
-          GIT_USER_NAME: "pradeepkumarpop"  # Optional: Set deployer name
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
